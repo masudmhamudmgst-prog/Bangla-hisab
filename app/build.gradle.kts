@@ -31,6 +31,12 @@ android {
     }
 }
 
+// এই অংশটি সংঘাতপূর্ণ ফাইলগুলোকে বাদ দিয়ে ডুপ্লিকেট এরর সমাধান করে
+configurations.all {
+    exclude(group = "com.intellij", module = "annotations")
+    exclude(group = "org.jetbrains", module = "annotations-java5")
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
